@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Calligraffitti|Mali");
+/* GENERAL STYLES */
+  // $GmainYellow: global #fdbe02;
+
+  $mainYellow: #fdbe02 !important;
+  $mainWhite: #fff !important;
+  $mainBlack: #071013 !important;
+  $mainGrey: #9b9999;
+  $TransGrey: rgba(0, 0, 0, 0.1);
+
+body {
+  color: $mainBlack;
+  background: $mainWhite;
+  font-family: "mali", cursive !important;
+}
+.text-slanted {
+  font-family: "Calligraffitti", cursive;
+}
+.text-mainGrey {
+  color: $mainGrey;
+}
+.text-yellow {
+  color: $mainYellow;
+}
+.btn-yellow{
+  background: $mainYellow;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: $mainBlack;
+  border-radius: 0 !important;
+}
+.btn-yellow:hover{
+  background: $mainBlack;
+  color: $mainYellow;
+}
+.badge-black{
+  background: $mainBlack;
+  color: $mainYellow;
+}
+.btn-black{
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: $mainBlack;
+  border-radius: 0 !important;
+  border: 0.1rem solid $mainBlack;
+}
+.btn-black:hover{
+  background: $mainBlack;
+  color: $mainWhite;
+}
+
+// flexbox
+.d-flex{
+  display: flex;
+}
+.align-items-center{
+  align-items: center;
+}
+.justify-content-between{
+  justify-content: space-between;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
