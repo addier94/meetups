@@ -64,3 +64,25 @@ body {
 .flex-wrap{
   flex-wrap: wrap;
 }
+
+
+
+// meetups
+.single-item {
+  transition: all 0.3 linear !important;
+}
+.single-item:hover {
+  box-shadow: 0 10px 15px rgb(0, 0, 0);
+}
+.img-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.store-img {
+  transition: all .5s ease-in-out;
+}
+.img-container:hover .store-img {
+  transform: scale(1.2);
+}
+// end meetups

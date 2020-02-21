@@ -182,127 +182,21 @@
       <section class="section">
         <h1 class="title">Categorias</h1>
         <div class="columns store-items is-multiline" id="store-items">
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-quarter">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="content text-slanted is-size-4 p-1">
-                    Musica
-                </div>
-            </div>
-          </div>
+        <CategoryItem v-for="category in categories"
+                      :key="category._id"
+                      :category="category" />
         </div>
       </section>
     </div>
   </div>
 </template>
-
 <script>
+import CategoryItem from '@/components/CategoryItem'
   import axios from 'axios'
   export default {
+    components: {
+      CategoryItem
+    },
     data() {
       return {
         categories: []
@@ -321,7 +215,6 @@
   .is-rounded {
     border-radius: 10px !important;
   }
-
   /* banner */
 .banner{
   min-height: calc(100vh - 0px);
@@ -331,26 +224,6 @@
   background: url('../assets/images/banner.jpeg') center/cover fixed no-repeat;
 }
 // end banner
-
-// meetups
-.single-item {
-  transition: all 0.3 linear !important;
-}
-.single-item:hover {
-  box-shadow: 0 10px 15px rgb(0, 0, 0);
-}
-.img-container {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-.store-img {
-  transition: all .5s ease-in-out;
-}
-.img-container:hover .store-img {
-  transform: scale(1.2);
-}
-// end meetups
 
 
 </style>
