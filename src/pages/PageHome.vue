@@ -21,161 +21,9 @@
           </div>
         </div>
         <div class="columns store-items is-multiline" id="store-items">
-          <div class="column is-one-third">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img class="store-img" src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="card-content">
-                  <div class="level m-b-md">
-                    <div class="media-left">
-                      <div class="level-item has-text-centered">
-                        <div>
-                          <p class="title">Oct</p>
-                          <p class="title">15</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4 no-padding is-marginless">title meetup</p>
-                        <span class="tag badge-black">cine</span>
-                        <p class="subtitle is-7">location meetup</p>
-                    </div>
-                  </div>
-                  <div class="content text-mainGrey">
-                      description meetup
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img class="store-img" src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="card-content">
-                  <div class="level m-b-md">
-                    <div class="media-left">
-                      <div class="level-item has-text-centered">
-                        <div>
-                          <p class="title">Oct</p>
-                          <p class="title">15</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4 no-padding is-marginless">title meetup</p>
-                        <span class="tag badge-black">cine</span>
-                        <p class="subtitle is-7">location meetup</p>
-                    </div>
-                  </div>
-                  <div class="content text-mainGrey">
-                      description meetup
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img class="store-img" src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="card-content">
-                  <div class="level m-b-md">
-                    <div class="media-left">
-                      <div class="level-item has-text-centered">
-                        <div>
-                          <p class="title">Oct</p>
-                          <p class="title">15</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4 no-padding is-marginless">title meetup</p>
-                        <span class="tag badge-black">cine</span>
-                        <p class="subtitle is-7">location meetup</p>
-                    </div>
-                  </div>
-                  <div class="content text-mainGrey">
-                      description meetup
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img class="store-img" src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="card-content">
-                  <div class="level m-b-md">
-                    <div class="media-left">
-                      <div class="level-item has-text-centered">
-                        <div>
-                          <p class="title">Oct</p>
-                          <p class="title">15</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4 no-padding is-marginless">title meetup</p>
-                        <span class="tag badge-black">cine</span>
-                        <p class="subtitle is-7">location meetup</p>
-                    </div>
-                  </div>
-                  <div class="content text-mainGrey">
-                      description meetup
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="column is-one-third">
-            <div class="card single-item large">
-              <a href="#" class="card-meetup-link">
-                <div class="img-container">
-                  <figure class="image is-4by3">
-                      <img class="store-img" src="https://supercurioso.com/wp-content/uploads/2015/06/FIRMACOMOERES.jpg" alt="Image">
-                  </figure>
-                </div>
-              </a>
-                <div class="card-content">
-                  <div class="level m-b-md">
-                    <div class="media-left">
-                      <div class="level-item has-text-centered">
-                        <div>
-                          <p class="title">Oct</p>
-                          <p class="title">15</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4 no-padding is-marginless">title meetup</p>
-                        <span class="tag badge-black">cine</span>
-                        <p class="subtitle is-7">location meetup</p>
-                    </div>
-                  </div>
-                  <div class="content text-mainGrey">
-                      description meetup
-                  </div>
-                </div>
-            </div>
-          </div>
+          <MeetupItem v-for="meetup in meetups"
+                      :key="meetup._id"
+                      :meetup="meetup" />
         </div>
         <!-- end meetups -->
       </section>
@@ -191,18 +39,26 @@
   </div>
 </template>
 <script>
-import CategoryItem from '@/components/CategoryItem'
   import axios from 'axios'
+  import CategoryItem from '@/components/CategoryItem'
+  import MeetupItem from '@/components/MeetupItem'
   export default {
     components: {
-      CategoryItem
+      CategoryItem,
+      MeetupItem
     },
     data() {
       return {
+        meetups: [],
         categories: []
       }
     },
     created () {
+      axios.get('/api/v1/meetups')
+        .then(res => {
+          this.meetups = res.data
+        })
+
       axios.get('/api/v1/categories')
         .then(res => {
           this.categories = res.data
