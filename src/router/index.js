@@ -14,7 +14,7 @@ const router = new Router({
       component: PageHome
     },
     {
-      path: '/junte/:id',
+      path: '/encuentro/:id',
       name: 'PageMeetupDetail',
       component: PageMeetupDetail
     }
