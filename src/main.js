@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
+
 import moment from 'moment'
-// import Example from './components/shared/AppHero'
+import AppHero from './components/shared/AppHero'
 
 Vue.config.productionTip = false
 
-// Vue.component('AppHero', Example)
+Vue.component('AppHero', AppHero)
 
 Vue.filter('capitalize', function(value) {
   if (value && typeof value === 'string') {
@@ -26,5 +28,6 @@ Vue.filter('formatDate', function(value, formatType = 'LL') {
 })
 
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
