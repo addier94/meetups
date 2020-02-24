@@ -316,7 +316,7 @@ module.exports = {
     },
     {
       "_id": user2Id,
-      "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "avatar": "https://images.unsplash.com/photo-1558980664-10e7170b5df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80",
       "email": "bernardo@gmail.com",
       "name": "Bernardo yumo",
       "info": "Machine learning and computer science",
