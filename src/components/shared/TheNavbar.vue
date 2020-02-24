@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <router-link :to="'/'" class="navbar-item">
         <img src="@/assets/logo.png" width="112" height="28">
-      </a>
+      </router-link>
       <a role="button" :class="['navbar-burger navbar-toggler', toggleNav ? 'is-active' : '']" @click="toggleNav = !toggleNav" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -13,9 +13,9 @@
 
     <div id="navbarBasicExample" :class="['navbar-menu', toggleNav ? 'is-active' : '']" >
       <div class="navbar-start">
-        <a class="navbar-item nav-active">
+        <router-link :to="'/'" class="navbar-item nav-active">
           Home
-        </a>
+        </router-link>
 
         <a class="navbar-item">
           Buscar
