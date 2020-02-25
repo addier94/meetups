@@ -8,7 +8,10 @@
           <h1 class="title column">Reuniones destacados en "Localización"</h1>
           <div class="column has-text-right-tablet mt-1">
             <button class="button btn-yellow mr-2">Crear reuniones</button>
-            <button class="button btn-black">Todo</button>
+            <router-link :to="{name: 'PageMeetupFind'}" 
+              class="button btn-black">
+              Todo
+            </router-link>
           </div>
         </div>
         <div class="columns store-items is-multiline" id="store-items">
