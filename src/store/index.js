@@ -15,6 +15,9 @@ export default new Vuex.Store({
   },
   // Getters are like computed properties. Simple functions to get a state
   getters: {
+    testingGetter () {
+      return 55
+    },
     meetups (state) {
       return state.meetups
     },
