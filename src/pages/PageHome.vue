@@ -1,8 +1,8 @@
 <template>
-  <div v-if="false">
+  <div>
     <AppHero />
     <!-- meetups -->
-    <div class="container">
+    <div v-if="pageLoader_isDataLoaded" class="container">
       <section class="section">
         <div class="columns is-gapless mt-n4">
           <h1 class="title column">Reuniones destacados en "Localización"</h1>
@@ -30,20 +30,22 @@
         </div>
       </section>
     </div>
-  </div>
-  <div v-else class="mt-5">
-    <AppSpinner />
+    <div v-else class="container">
+      <AppSpinner />
+    </div>
   </div>
 </template>
 <script>
   import CategoryItem from '@/components/CategoryItem'
   import MeetupItem from '@/components/MeetupItem'
   import { mapActions, mapState } from 'vuex'
+  import pageLoader from '@/mixins/pageLoader'
   export default {
     components: {
       CategoryItem,
       MeetupItem
     },
+    mixins: [pageLoader],
     computed: {
       ...mapState({
         meetups: state => state.meetups.items,
@@ -51,8 +53,12 @@
       })
     },
     created () {
-      this.fetchMeetups()
-      this.fetchCategories()
+      Promise.all([this.fetchMeetups(), this.fetchCategories()])
+        .then((results) => this.pageLoader_resolveData())
+        .catch((err) => {
+          console.log(err)
+          this.pageLoader_resolveData()
+        })
     },
     methods: {
       ...mapActions('meetups', ['fetchMeetups']),
