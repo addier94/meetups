@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="false">
     <AppHero />
     <!-- meetups -->
     <div class="container">
@@ -30,6 +30,9 @@
         </div>
       </section>
     </div>
+  </div>
+  <div v-else class="mt-5">
+    <AppSpinner />
   </div>
 </template>
 <script>

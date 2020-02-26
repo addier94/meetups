@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <TheNavbar />
-    <router-view />
+    <div class="page-wrapper">
+      <router-view />
+    </div>
     <TheFooter />
   </div>
 </template>
 
 <script>
-import  PageHome from '@/pages/PageHome'
 import TheNavbar from '@/components/shared/TheNavbar'
 import TheFooter from '@/components/shared/TheFooter'
 export default {
   name: 'app',
   components: {
-    PageHome,
     TheNavbar,
     TheFooter
   }
@@ -25,4 +25,7 @@ export default {
 @import '~bulma/bulma.sass';
 @import 'assets/css/global.scss';
 
+.page-wrapper {
+  min-height: 55vh;
+}
 </style>

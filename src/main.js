@@ -5,10 +5,12 @@ import store from './store'
 
 import moment from 'moment'
 import AppHero from './components/shared/AppHero'
+import AppSpinner from './components/shared/AppSpinner'
 
 Vue.config.productionTip = false
 
 Vue.component('AppHero', AppHero)
+Vue.component('AppSpinner', AppSpinner)
 
 Vue.filter('capitalize', function(value) {
   if (value && typeof value === 'string') {
