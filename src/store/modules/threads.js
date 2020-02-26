@@ -1,4 +1,4 @@
-
+import axios from 'axios'
 
 export default {
   namespaced: true,
@@ -14,7 +14,7 @@ export default {
       axios.get(`/api/v1/threads?meetupId=${meetupId}`)
         .then(res => {
           const threads = res.data
-          commit('setItems', {resource: 'threads', items: threads})
+          commit('setItems', {resource: 'threads', items: threads}, {root: true})
           return state.threads
         })
     }
