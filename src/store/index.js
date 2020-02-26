@@ -25,28 +25,48 @@ export default new Vuex.Store({
   // Actions are like methods in vue componenet. They should not mutate the state.
   // Very good spot to fetch a data. Action call usualy should resolve into data.
   actions: {
-    fetchMeetups (context) {
+    fetchMeetups ({state, commit}) {
+      commit('setItems', {resource: 'meetups', items: []})
       axios.get('/api/v1/meetups')
         .then(res => {
           const meetups = res.data
-          context.commit('setMeetups', meetups)
+          commit('setItems', {resource: 'meetups', items: meetups})
+          return state.meetups
         })
     },
-    fetchCategories (context) {
+    fetchCategories ({state, commit}) {
       axios.get('/api/v1/categories')
         .then(res => {
           const categories = res.data
-          context.commit('setCategories', categories)
+          commit('setCategories', categories)
+          return state.categories
+        })
+    },
+    fetchMeetupById ({state, commit}, meetupId) {
+      commit('setItem', {resource: 'meetup', item: {}})
+      axios.get(`/api/v1/meetups/${meetupId}`)
+        .then(res => {
+          const meetup = res.data
+          commit('setItem', {resource: 'meetup', item: meetup})
+          return state.meetup
+        })
+    },
+    fetchThreads ({state, commit}, meetupId) {
+      axios.get(`/api/v1/threads?meetupId=${meetupId}`)
+        .then(res => {
+          const threads = res.data
+          commit('setItems', {resource: 'threads', items: threads})
+          return state.threads
         })
     }
   },
   // Simple functions to mutate a state
   mutations: {
-    setMeetups (state, meetups) {
-      state.meetups = meetups
+    setItems (state, {resource, items}) {
+      state[resource] = items
     },
-    setCategories (state, categories) {
-      state.categories = categories
+    setItem (state, {resource, item}) {
+      state[resource] = item
     }
   }
 })
