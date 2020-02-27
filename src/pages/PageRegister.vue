@@ -12,50 +12,56 @@
             <form>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="text"
-                         placeholder="Usuario">
+                  <input  v-model="form.username" 
+                          class="input is-large"
+                          type="text"
+                          placeholder="Usuario">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="text"
-                         placeholder="Nombre">
+                  <input  v-model="form.name"
+                          class="input is-large"
+                          type="text"
+                          placeholder="Nombre">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="email"
-                         placeholder="Correo">
+                  <input  v-model="form.email"
+                          class="input is-large"
+                          type="email"
+                          placeholder="Correo">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="text"
-                         placeholder="Link para foto de perfil"
-                         autocomplete="">
+                  <input  v-model="form.avatar"
+                          class="input is-large"
+                          type="text"
+                          placeholder="Link para foto de perfil"
+                          autocomplete="">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="password"
-                         placeholder="Contraseña"
-                         autocomplete="new-password">
+                  <input  v-model="form.password"
+                          class="input is-large"
+                          type="password"
+                          placeholder="Contraseña"
+                          autocomplete="new-password">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="password"
-                         placeholder="Confirmar contraseña"
-                         autocomplete="off">
+                  <input  v-model="form.passwordConfirmation"
+                          class="input is-large"
+                          type="password"
+                          placeholder="Confirmar contraseña"
+                          autocomplete="off">
                 </div>
               </div>
-              <button type="submit" class="button is-block btn-yellow is-large is-fullwidth">Registro</button>
+              <button @click.prevent="register" type="submit" class="button is-block btn-yellow is-large is-fullwidth">Registro</button>
             </form>
           </div>
           <p class="has-text-grey">
@@ -71,6 +77,23 @@
 
 <script>
   export default {
+    data () {
+      return {
+        form: {
+          username: null,
+          name: null,
+          email: null,
+          avatar: null,
+          password: null,
+          passwordConfirmation: null
+        }
+      }
+    },
+    methods: {
+      register () {
+        this.$store.dispatch('auth/registerUser', this.form)
+      }
+    }
   }
 </script>
 

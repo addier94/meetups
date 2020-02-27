@@ -12,22 +12,24 @@
             <form>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="email"
-                         placeholder="Correo"
-                         autofocus=""
-                         autocomplete="email">
+                  <input  v-model="form.email"
+                          class="input is-large"
+                          type="email"
+                          placeholder="Correo"
+                          autofocus=""
+                          autocomplete="email">
                 </div>
               </div>
               <div class="field">
                 <div class="control">
-                  <input class="input is-large"
-                         type="password"
-                         placeholder="Contraseña"
-                         autocomplete="current-password">
+                  <input  v-model="form.password"
+                          class="input is-large"
+                          type="password"
+                          placeholder="Contraseña"
+                          autocomplete="current-password">
                 </div>
               </div>
-              <button class="button is-block btn-yellow is-large is-fullwidth">Iniciar sesion</button>
+              <button @click.prevent="login" class="button is-block btn-yellow is-large is-fullwidth">Iniciar sesion</button>
             </form>
           </div>
           <p class="has-text-grey">
@@ -43,6 +45,19 @@
 
 <script>
   export default {
+    data () {
+      return {
+        form: {
+          email: null,
+          password: null
+        }
+      }
+    },
+    methods: {
+      login () {
+        this.$store.dispatch('auth/loginWithEmailAndPassword', this.form)
+      }
+    }
   }
 </script>
 
