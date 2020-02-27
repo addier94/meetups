@@ -54,7 +54,7 @@
     },
     created () {
       Promise.all([this.fetchMeetups(), this.fetchCategories()])
-        .then((results) => this.pageLoader_resolveData())
+        .then(() => this.pageLoader_resolveData())
         .catch((err) => {
           console.log(err)
           this.pageLoader_resolveData()

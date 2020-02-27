@@ -1,3 +1,4 @@
+import axios from 'axios'
 
 export default {
   namespaced: true,
@@ -10,6 +11,7 @@ export default {
     },
     registerUser (context, userData) {
       console.log(userData)
+      return axios.post('/api/v1/users/register', userData)
     }
   }
 }
