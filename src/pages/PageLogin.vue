@@ -85,6 +85,8 @@ import { required, email } from 'vuelidate/lib/validators'
       login () {
         this.$v.form.$touch()
         this.$store.dispatch('auth/loginWithEmailAndPassword', this.form)
+          .then(() => this.$router.push('/'))
+          .catch((err) => console.log(err))
       }
     }
   }
