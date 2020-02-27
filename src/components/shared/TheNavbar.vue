@@ -46,12 +46,12 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button btn-yellow">
+            <router-link :to="{name: 'PageRegister'}" class="button btn-yellow">
               Registrarse
-            </a>
-            <a class="button btn-black">
+            </router-link>
+            <router-link :to="{name: 'PageLogin'}" class="button btn-black">
               Iniciar Sesion
-            </a>
+            </router-link>
           </div>
         </div>
       </div>

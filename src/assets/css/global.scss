@@ -8,6 +8,11 @@
   $mainGrey: #9b9999;
   $TransGrey: rgba(0, 0, 0, 0.1);
 
+
+.input:active, .input:focus{
+  border: 1px solid $mainYellow;
+  box-shadow: 0px 0px 10px 0px $mainYellow;
+}
 body {
   color: $mainBlack;
   background: $mainWhite;
@@ -18,6 +23,12 @@ body {
 }
 .text-mainGrey {
   color: $mainGrey;
+}
+.link-grey{
+  color: $mainGrey;
+  &:hover{
+    color: $mainBlack;
+  }
 }
 .text-yellow {
   color: $mainYellow;
